@@ -14,4 +14,11 @@ Favorite Language: <select name="favlang">
 </select>
 Comment (optional):<input type="textarea" name="comment">
 <input type= "submit" name="Button">
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  {% for message in messages %}
+    <alert>{{message}}</alert>
+  {% endfor %}
+{% endif %}
+{% endwith %}
 </form>
